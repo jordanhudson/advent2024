@@ -11,8 +11,8 @@ func day1() {
 	lines := readFileAsStringSlice("inputs/day1.txt")
 	var listA []int
 	var listB []int
+	re := regexp.MustCompile(`\d+`)
 	for _, line := range lines {
-		re := regexp.MustCompile(`\d+`)
 		matches := re.FindAllString(line, 2)
 		locationA, _ := strconv.Atoi(matches[0])
 		locationB, _ := strconv.Atoi(matches[1])
