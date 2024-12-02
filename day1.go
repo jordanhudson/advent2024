@@ -31,13 +31,12 @@ func day1() {
 
 	// part 2
 	histogramOfB := make(map[int]int)
-	for _, v := range listB {
-		histogramOfB[v]++
+	for _, x := range listB {
+		histogramOfB[x]++
 	}
 	totalSimilarityScore := 0
-	for _, v := range listA {
-		similarity := v * histogramOfB[v]
-		totalSimilarityScore += similarity
+	for _, x := range listA {
+		totalSimilarityScore += x * histogramOfB[x]
 	}
 	fmt.Printf("total similarity: %d\n", totalSimilarityScore)
 }
