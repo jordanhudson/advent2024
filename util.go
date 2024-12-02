@@ -6,14 +6,6 @@ import (
 	"strings"
 )
 
-func readFileAsString(filePath string) string {
-	data, err := os.ReadFile(filePath)
-	if err != nil {
-		panic(err)
-	}
-	return string(data)
-}
-
 func readFileAsStringSlice(filePath string) []string {
 	data, err := os.ReadFile(filePath)
 	if err != nil {
@@ -47,7 +39,7 @@ func stringsToInts(strings []string) ([]int, error) {
 
 func removeElementAt(slice []int, i int) []int {
 	if i < 0 || i >= len(slice) {
-		return slice // Return the original slice if the i is out of bounds
+		return slice // Return the original slice if the index is out of bounds
 	}
 	copiedSlice := append([]int(nil), slice...)
 	return append(copiedSlice[:i], copiedSlice[i+1:]...)
