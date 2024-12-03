@@ -6,7 +6,7 @@ import (
 )
 
 func day3() {
-	reExpr := regexp.MustCompile(`mul\(\d{1,3},\d{1,3}\)|do\(\)|don\'t\(\)`)
+	reExpr := regexp.MustCompile(`mul\(\d{1,3},\d{1,3}\)|do\(\)|don't\(\)`)
 	reMulOperands := regexp.MustCompile(`\d+`)
 	input := readFileAsString("inputs/day3.txt")
 	exprs := reExpr.FindAllString(input, -1)
