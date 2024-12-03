@@ -10,7 +10,7 @@ func day2() {
 	re := regexp.MustCompile(`\d+`)
 	safeCount := 0
 	for _, line := range lines {
-		report, _ := stringsToInts(re.FindAllString(line, -1))
+		report := stringsToInts(re.FindAllString(line, -1))
 		for i := -1; i < len(report); i++ {
 			moddedReport := removeElementAt(report, i) // passing -1 doesn't remove anything
 			if isReportSafe(moddedReport) {

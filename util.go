@@ -6,6 +6,14 @@ import (
 	"strings"
 )
 
+func readFileAsString(filePath string) string {
+	data, err := os.ReadFile(filePath)
+	if err != nil {
+		panic(err)
+	}
+	return string(data)
+}
+
 func readFileAsStringSlice(filePath string) []string {
 	data, err := os.ReadFile(filePath)
 	if err != nil {
@@ -25,16 +33,16 @@ func abs(x int) int {
 	return x
 }
 
-func stringsToInts(strings []string) ([]int, error) {
+func stringsToInts(strings []string) []int {
 	ints := make([]int, len(strings))
 	for i, s := range strings {
 		n, err := strconv.Atoi(s)
 		if err != nil {
-			return nil, err
+			panic(err)
 		}
 		ints[i] = n
 	}
-	return ints, nil
+	return ints
 }
 
 func removeElementAt(slice []int, i int) []int {
