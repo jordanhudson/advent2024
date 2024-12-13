@@ -4,19 +4,6 @@ import (
 	"fmt"
 )
 
-type Direction int
-
-const (
-	North Direction = iota
-	Northeast
-	East
-	Southeast
-	South
-	Southwest
-	West
-	Northwest
-)
-
 func day4() {
 	matrix := readFileAsCharMatrix("inputs/day4.txt")
 
